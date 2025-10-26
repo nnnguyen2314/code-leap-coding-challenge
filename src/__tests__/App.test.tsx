@@ -9,5 +9,6 @@ test('renders initial loading state', () => {
       <App />
     </AppProviders>
   );
-  expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
+  // Match the exact "Loading..." text to avoid "Loading details..." false positives
+  expect(screen.getByText(/^Loading\.\.\.$/i)).toBeInTheDocument();
 });

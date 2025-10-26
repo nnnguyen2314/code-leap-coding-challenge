@@ -25,7 +25,10 @@ describe('useVote hook', () => {
     fireEvent.click(screen.getByText('Send'));
 
     await waitFor(() =>
-      expect(postVote).toHaveBeenCalledWith(expect.objectContaining({ image_id: 'img1', value: 2 }))
+      expect(postVote).toHaveBeenCalledWith(
+        expect.objectContaining({ image_id: 'img1', value: 2 }),
+        expect.anything()
+      )
     );
   });
 });
