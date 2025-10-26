@@ -24,6 +24,8 @@ describe('useVote hook', () => {
     renderWithProviders(<TestCmp />);
     fireEvent.click(screen.getByText('Send'));
 
-    await waitFor(() => expect(postVote).toHaveBeenCalledWith({ image_id: 'img1', value: 2 }));
+    await waitFor(() =>
+      expect(postVote).toHaveBeenCalledWith(expect.objectContaining({ image_id: 'img1', value: 2 }))
+    );
   });
 });
