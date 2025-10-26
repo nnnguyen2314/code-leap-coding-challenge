@@ -1,0 +1,5 @@
+.breed-card{position:relative;width:min(420px,100%);aspect-ratio:3/4;border-radius:16px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.2);background:#ddd;cursor:pointer}
+.breed-bg{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;filter:brightness(.9)}
+.breed-info{position:absolute;left:8px;right:8px;bottom:8px;background:rgba(255,255,255,.85);border-radius:8px;padding:8px}
+.breed-name{font-weight:700}
+.breed-sub{opacity:.8;font-size:.9rem}
