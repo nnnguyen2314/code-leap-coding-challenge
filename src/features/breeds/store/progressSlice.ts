@@ -23,7 +23,9 @@ function loadState(): ProgressState | undefined {
 function saveState(state: ProgressState) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch {}
+  } catch {
+    // ignore write errors (e.g., storage disabled or quota exceeded)
+  }
 }
 
 const initialState: ProgressState =

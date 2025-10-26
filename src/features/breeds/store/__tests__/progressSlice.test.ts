@@ -1,4 +1,4 @@
-import reducer, { advance, reset, setIndex, setVote, ProgressState } from './progressSlice';
+import reducer, { advance, reset, setIndex, setVote, ProgressState } from '../progressSlice';
 
 describe('progressSlice', () => {
   const initial: ProgressState = { currentIndex: 0, votes: {}, lastImageIdByBreed: {} };

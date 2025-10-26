@@ -1,4 +1,26 @@
-.layout-root{display:flex;flex-direction:column;min-height:100vh}
-.layout-header{position:sticky;top:0;background:#111;color:#fff;padding:12px 16px;font-weight:700}
-.layout-main{flex:1;display:flex;justify-content:center;align-items:center;padding:16px}
-.layout-footer{background:#f5f5f5;color:#333;padding:8px 16px;text-align:center}
+.layout-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.layout-header {
+    position: sticky;
+    top: 0;
+    background: #111;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 700;
+}
+.layout-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+.layout-footer {
+    background: #f5f5f5;
+    color: #333;
+    padding: 8px 16px;
+    text-align: center;
+}
