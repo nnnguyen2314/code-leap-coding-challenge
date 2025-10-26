@@ -19,11 +19,11 @@ export const DetailsPage: React.FC = () => {
         )}
         <button
           className="back-btn"
-          aria-label="Home"
-          title="Home"
+          aria-label="Back"
+          title="Back"
           onClick={() => navigate('/')}
         >
-          ⟲
+          ←
         </button>
       </div>
       <div className="details-body">
