@@ -66,7 +66,6 @@ export const MainPage: React.FC = () => {
     <div className="main-wrap" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       <BreedCard breed={current} onClick={goDetails} />
       <Buttons onDislike={() => doVote(-1)} onLike={() => doVote(1)} onSuper={() => doVote(2)} />
-      <div className="hint">Swipe: left=dislike, right=like, up=super like. Click card for details.</div>
     </div>
   );
 };
