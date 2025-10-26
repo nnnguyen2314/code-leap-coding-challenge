@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# DogFinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An intuitive, swipe-based web app to explore dog breeds using TheDogAPI. Pick your next best friend by liking, disliking, or super-liking breeds and viewing detailed information.
 
-## Available Scripts
+## Quick Start
 
-In the project directory, you can run:
+1. Copy `.env.example` to `.env` and adjust if needed. We already include a public demo API key for convenience.
+2. Install dependencies: `npm install`
+3. Run the app: `npm start`
+4. Run unit tests: `npm test`
+5. Run e2e tests (in another terminal with dev server running): `npm run e2e`
 
-### `npm start`
+## Tech Choices
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React + TypeScript (CRA baseline)
+- React Router for routing between Main and Details pages
+- Redux Toolkit + redux-thunk for global UI state (swiping progress and preferences) with localStorage persistence
+- TanStack React Query for data fetching/caching from TheDogAPI
+- Axios for HTTP client with x-api-key header
+- ESLint + Prettier + Husky + lint-staged for consistent code style
+- Testing: React Testing Library/Jest for unit, Playwright for e2e
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Architecture (feature-first)
 
-### `npm test`
+- `src/features/breeds` contains breed-related components, hooks, containers, store
+- `src/shared` contains common API client, layout, providers, redux store
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment
 
-### `npm run build`
+Configure API in `.env`:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+REACT_APP_DOG_API_URL=https://api.thedogapi.com/v1
+REACT_APP_DOG_API_KEY=your_key_here
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A default `.env` is included with the provided public key for easy demo.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How it works
 
-### `npm run eject`
+- Main Page loads a page of breeds with images. You can:
+  - Swipe left or click ❌ to dislike (sends vote value -1)
+  - Swipe right or click ✅ to like (sends vote value 1)
+  - Swipe up or click ⭐ to super like (sends vote value 2)
+  - Click the card to open the Details page
+- Progress is saved to localStorage so reloading continues from the next breed
+- Details Page shows: weight.metric, height.metric, name, bred_for, breed_group, life_span, temperament
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Sources
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- TheDogAPI docs: https://docs.thedogapi.com/reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Note: This project follows best practices but remains intentionally minimal to fit the challenge scope.
