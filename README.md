@@ -1,6 +1,7 @@
 # DogFinder
 
-An intuitive, swipe-based web app to explore dog breeds using TheDogAPI. Pick your next best friend by liking, disliking, or super-liking breeds and viewing detailed information.
+An intuitive, swipe-based web app to explore dog breeds using The Dog API.
+Pick your next best friend by liking, disliking, or super-liking breeds and viewing detailed information.
 
 ## Quick Start
 
@@ -8,7 +9,7 @@ An intuitive, swipe-based web app to explore dog breeds using TheDogAPI. Pick yo
 2. Install dependencies: `npm install`
 3. Run the app: `npm start`
 4. Run unit tests: `npm test`
-5. Run e2e tests (in another terminal with dev server running): `npm run e2e`
+5. Run e2e tests: `npm run e2e` (the dev server auto-starts)
 
 ## Tech Choices
 

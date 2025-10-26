@@ -7,6 +7,13 @@ export default defineConfig({
     baseURL: 'http://localhost:3000',
     headless: true,
   },
+  webServer: {
+    command: 'npm start',
+    port: 3000,
+    timeout: 120000,
+    reuseExistingServer: true,
+    env: { BROWSER: 'none' },
+  },
   projects: [
     {
       name: 'chromium',
