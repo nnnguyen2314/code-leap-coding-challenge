@@ -30,9 +30,14 @@ An intuitive, swipe-based web app to explore dog breeds using TheDogAPI. Pick yo
 Configure API in `.env`:
 
 ```
-REACT_APP_DOG_API_URL=https://api.thedogapi.com/v1
-REACT_APP_DOG_API_KEY=your_key_here
+DOG_API_URL=https://api.thedogapi.com/v1
+DOG_API_KEY=your_key_here
 ```
+
+Notes:
+- The app now prefers unprefixed variables DOG_API_URL and DOG_API_KEY.
+- For backward compatibility, REACT_APP_DOG_API_URL and REACT_APP_DOG_API_KEY are still supported if present.
+- In Create React App builds, only REACT_APP_* variables are statically injected; if you rely solely on unprefixed vars, consider defining them at runtime on window.DOG_API_URL and window.DOG_API_KEY (or keep the REACT_APP_* entries alongside). 
 
 A default `.env` is included with the provided public key for easy demo.
 

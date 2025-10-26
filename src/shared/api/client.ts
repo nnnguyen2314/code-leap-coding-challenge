@@ -1,8 +1,11 @@
 import axios from 'axios';
 
 // Centralized axios instance configured for API calls
-const baseURL = process.env.REACT_APP_DOG_API_URL || 'https://api.thedogapi.com/v1';
-const apiKey = process.env.REACT_APP_DOG_API_KEY;
+// Prefer unprefixed env vars, but keep backward-compat with CRA's REACT_APP_ prefix.
+const w: any = typeof window !== 'undefined' ? (window as any) : {};
+const baseURL =
+  process.env.DOG_API_URL || w.DOG_API_URL || process.env.REACT_APP_DOG_API_URL || 'https://api.thedogapi.com/v1';
+const apiKey = process.env.DOG_API_KEY || w.DOG_API_KEY || process.env.REACT_APP_DOG_API_KEY;
 
 export const api = axios.create({
   baseURL,
